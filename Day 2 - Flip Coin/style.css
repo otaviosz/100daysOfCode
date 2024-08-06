@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(185deg, #f8bf03, #110a0a);
+}
+
+.container { 
+  background: #fff;
+  width: 400px;
+  padding: 50px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  color: #110a0a;
+  font-weight: 500;
+}
+
+.coin {
+  height: 150px;
+  width: 150px;
+  position: relative;
+  margin: 50px auto;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.tails {
+  transform: rotateX(180deg);
+}
+
+.buttons { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.coin img {
+  width: 150px;
+}
+
+.heads,.tails {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+button {
+  width: 120px;
+  padding: 10px 0;
+  border: none;
+  cursor: pointer;
+  background-color: #110a0a;
+  color: #ccc;
+  font-size: .875rem;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+#flip-button {
+  background-color: #f8bf03;
+  color: #110a0a;
+}
+
+#flip-button:disabled {
+  background-color: #fff;
+  color: #101020;
+}
+
+#reset-button:disabled {
+  background: #fff;
+  color: #101020;
+}
+
+@keyframes spin-tails {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(1980deg);
+  }
+}
+
+@keyframes spin-heads {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(2160deg);
+  }
+}
